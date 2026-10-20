@@ -929,7 +929,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 
   <Frame name="UserTemplate" hidden="false" virtual="true">
     <Size>
-	    <AbsDimension x="1072" y="80" /> 
+	    <AbsDimension x="1158" y="80" /> 
     </Size>
     <Layers>
 	    <Layer level="OVERLAY">
@@ -1063,7 +1063,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
         </Texture>
         <Texture name="$parentLine1" file="Interface\Tooltips\UI-Tooltip-Background" hidden="false">
         <Size>
-          <AbsDimension x="1150" y="2" /> 
+          <AbsDimension x="1236" y="2" /> 
         </Size>
         <Anchors>
           <Anchor point="TOPLEFT">
@@ -1211,6 +1211,18 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
          </Size>
           <Anchors>
             <Anchor point="TOPLEFT" relativeTo="$parentLine12">
+              <Offset>
+                <AbsDimension x="86" y="0" />
+              </Offset>
+            </Anchor>
+          </Anchors>
+        </Texture>
+        <Texture name="$parentLine14" file="Interface\Tooltips\UI-Tooltip-Background" hidden="false">
+         <Size>
+            <AbsDimension x="2" y="78" />
+         </Size>
+          <Anchors>
+            <Anchor point="TOPLEFT" relativeTo="$parentLine13">
               <Offset>
                 <AbsDimension x="86" y="0" />
               </Offset>
@@ -1400,6 +1412,15 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 			  </Anchor>
 		  </Anchors>
 	  </Button>
+	  <Button name="$parentClass12" inherits="BuffGridButtonTemplate">
+		  <Anchors>
+			  <Anchor point="TOPLEFT" relativeTo="$parentClass11" relativePoint="TOPRIGHT">
+				  <Offset>
+					  <AbsDimension x="2" y="0" /> 
+				  </Offset>
+			  </Anchor>
+		  </Anchors>
+	  </Button>
 
   </Frames>
   </Frame>
@@ -1408,7 +1429,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 
   <Frame name="PallyPowerConfigFrame" hidden="true" toplevel="true" frameStrata="HIGH" enableMouse="true" movable="true" parent="UIParent">
 	  <Size>
-		  <AbsDimension x="1170" y="960" /> 
+		  <AbsDimension x="1256" y="960" /> 
 	  </Size>
     <Anchors>
       <Anchor point="TOPLEFT" relativeTo="UIParent" relativePoint="BOTTOMLEFT">
@@ -1672,6 +1693,15 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 		  <Frame name="$parentClassGroup11" inherits="ClassGroupTemplate">
 			  <Anchors>
 				  <Anchor point="TOPLEFT" relativeTo="$parentClassGroup10" relativePoint="TOPRIGHT">
+					  <Offset>
+						  <AbsDimension x="2" y="0" /> 
+					  </Offset>
+				  </Anchor>
+			  </Anchors>
+		  </Frame>
+		  <Frame name="$parentClassGroup12" inherits="ClassGroupTemplate">
+			  <Anchors>
+				  <Anchor point="TOPLEFT" relativeTo="$parentClassGroup11" relativePoint="TOPRIGHT">
 					  <Offset>
 						  <AbsDimension x="2" y="0" /> 
 					  </Offset>

@@ -690,8 +690,8 @@ function PallyPower:NeedsBuff(class, test, playerName)
 	end
 
 	if self.opt.smartbuffs then
-		-- no wisdom for warriors, rogues and DKs
-		if (class == 1 or class == 2 or class == 10) and test == 1 then
+		-- no wisdom for warriors, rogues, DKs and DHs
+		if (class == 1 or class == 2 or class == 10 or class == 12) and test == 1 then
 			return false
 		end
 		-- no salv for warriors except normal blessings
@@ -2390,8 +2390,9 @@ function PallyPower:LoadPreset(preset)
 			self:Print("       Paladin: " .. name)
 			local i
 			for i = 1, PALLYPOWER_MAXCLASSES do
-				PallyPower_Assignments[name][i] = PallyPower_SavedPresets[preset][name][i]
-				PallyPower:SendMessage("ASSIGN "..name.." "..i.." "..PallyPower_SavedPresets[preset][name][i]) 
+				local skill = PallyPower_SavedPresets[preset][name][i] or 0
+				PallyPower_Assignments[name][i] = skill
+				PallyPower:SendMessage("ASSIGN "..name.." "..i.." "..skill) 
 			end 
 		end
 		self:Print("Done.")
@@ -2588,6 +2589,7 @@ function PallyPower:AutoAssignBlessings()
 	PallyPower:SelectBuffsByClass(pallycount, 9, {3, 1, 2, 4}) 	-- shaman
 	PallyPower:SelectBuffsByClass(pallycount, 10, {3, 2, 4}) 	-- dk
 	PallyPower:SelectBuffsByClass(pallycount, 11, {3, 2, 1, 4}) -- pets
+	PallyPower:SelectBuffsByClass(pallycount, 12, {3, 2, 4}) 	-- dh
 end
 
 function PallyPower:SelectBuffsByClass(pallycount, class, prioritylist)
